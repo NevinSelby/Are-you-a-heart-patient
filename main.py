@@ -31,7 +31,7 @@ st.text_input("Enter patient's name: ", key="name")
 # In[3]:
 
 
-data = pd.read_csv(r"D:\Python\ArtyvisTechnologies\heart.csv")
+data = pd.read_csv(r"heart.csv")
 
 
 # In[4]:
@@ -79,7 +79,7 @@ def one_hot_encode(df, column_dict):
 # In[9]:
 
 
-svm_model = pickle.load(open(r"D:\Python\ArtyvisTechnologies\svcHeart.sav", 'rb'))
+svm_model = pickle.load(open(r"svcHeart.sav", 'rb'))
 
 
 # In[10]:
