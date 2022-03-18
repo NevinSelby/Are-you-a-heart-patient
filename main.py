@@ -40,7 +40,7 @@ data = pd.read_csv(r"heart.csv")
 categorical_features = ['ChestPainType', 'ST_Slope']
 numeric_features = ['Age', 'RestingBP', 'Cholesterol', 'MaxHR', 'Oldpeak']
 eda_df = data.loc[:, numeric_features]
-eda_df.columns
+#eda_df.columns
 
 
 # In[5]:
