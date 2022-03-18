@@ -19,7 +19,8 @@ import pickle
 
 
 st.header("Heart Disease Prediction")
-st.text("To know more about the dataset, and what the abbreviations mean, refer readme.md from my github reporsitory")
+st.text("To know more about the dataset, and what the abbreviations mean, ")
+st.text("refer readme.md from my github reporsitory")
 st.text_input("Enter patient's name: ", key="name")
 
 
