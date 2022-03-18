@@ -147,20 +147,20 @@ with left_column:
         'ST Slope:',
         np.unique(data['ST_Slope']))
 
-rs = pickle.load(open(r'D:\Python\ArtyvisTechnologies\rs.pkl', 'rb'))
+rs = pickle.load(open(r'rs.pkl', 'rb'))
 
 if st.button('Make Prediction'):
-    encoder.classes_ = np.load(r'D:\Python\ArtyvisTechnologies\classes_sex.npy',allow_pickle=True)
+    encoder.classes_ = np.load(r'classes_sex.npy',allow_pickle=True)
     sex = encoder.transform(np.expand_dims(sex, -1))
-    encoder.classes_ = np.load(r'D:\Python\ArtyvisTechnologies\classes_chestpain.npy',allow_pickle=True)
+    encoder.classes_ = np.load(r'classes_chestpain.npy',allow_pickle=True)
     chestpain = encoder.transform(np.expand_dims(chestpain, -1))
-    encoder.classes_ = np.load(r'D:\Python\ArtyvisTechnologies\classes_fastingbs.npy',allow_pickle=True)
+    encoder.classes_ = np.load(r'classes_fastingbs.npy',allow_pickle=True)
     fastingbs = encoder.transform(np.expand_dims(fastingbs, -1))
-    encoder.classes_ = np.load(r'D:\Python\ArtyvisTechnologies\classes_restingecg.npy',allow_pickle=True)
+    encoder.classes_ = np.load(r'classes_restingecg.npy',allow_pickle=True)
     restingecg = encoder.transform(np.expand_dims(restingecg, -1))
-    encoder.classes_ = np.load(r'D:\Python\ArtyvisTechnologies\classes_exerciseangina.npy',allow_pickle=True)
+    encoder.classes_ = np.load(r'classes_exerciseangina.npy',allow_pickle=True)
     exerciseangina = encoder.transform(np.expand_dims(exerciseangina, -1))
-    encoder.classes_ = np.load(r'D:\Python\ArtyvisTechnologies\classes_stslope.npy',allow_pickle=True)
+    encoder.classes_ = np.load(r'classes_stslope.npy',allow_pickle=True)
     stslope = encoder.transform(np.expand_dims(stslope, -1))
     inputs = rs.transform(np.expand_dims(
         ([int(age), int(sex), int(chestpain), restingbp, cholestrol, int(fastingbs), int(restingecg), maxhr, int(exerciseangina), int(oldpeak), int(stslope)]), 0))
