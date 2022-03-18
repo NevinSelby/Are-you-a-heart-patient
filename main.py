@@ -33,7 +33,7 @@ st.text_input("Enter patient's name: ", key="name")
 # In[3]:
 
 
-data = pd.read_csv(r"D:\Python\ArtyvisTechnologies\heart.csv")
+data = pd.read_csv(r"https://github.com/NevinSelby/Are-you-a-heart-patient/blob/main/heart.csv")
 
 
 # In[4]:
@@ -81,7 +81,7 @@ def one_hot_encode(df, column_dict):
 # In[9]:
 
 
-svm_model = pickle.load(open(r"D:\Python\ArtyvisTechnologies\svcHeart.sav", 'rb'))
+svm_model = pickle.load(open(r"https://github.com/NevinSelby/Are-you-a-heart-patient/blob/main/svcHeart.sav", 'rb'))
 
 
 # In[10]:
@@ -149,20 +149,20 @@ with left_column:
         'ST Slope:',
         np.unique(data['ST_Slope']))
 
-rs = pickle.load(open(r'D:\Python\ArtyvisTechnologies\rs.pkl', 'rb'))
+rs = pickle.load(open(r'https://github.com/NevinSelby/Are-you-a-heart-patient/blob/main/rs.pkl', 'rb'))
 
 if st.button('Make Prediction'):
-    encoder.classes_ = np.load(r'D:\Python\ArtyvisTechnologies\classes_sex.npy',allow_pickle=True)
+    encoder.classes_ = np.load(r'https://github.com/NevinSelby/Are-you-a-heart-patient/blob/main/classes_sex.npy',allow_pickle=True)
     sex = encoder.transform(np.expand_dims(sex, -1))
-    encoder.classes_ = np.load(r'D:\Python\ArtyvisTechnologies\classes_chestpain.npy',allow_pickle=True)
+    encoder.classes_ = np.load(r'https://github.com/NevinSelby/Are-you-a-heart-patient/blob/main/classes_chestpain.npy',allow_pickle=True)
     chestpain = encoder.transform(np.expand_dims(chestpain, -1))
-    encoder.classes_ = np.load(r'D:\Python\ArtyvisTechnologies\classes_fastingbs.npy',allow_pickle=True)
+    encoder.classes_ = np.load(r'https://github.com/NevinSelby/Are-you-a-heart-patient/blob/main/classes_fastingbs.npy',allow_pickle=True)
     fastingbs = encoder.transform(np.expand_dims(fastingbs, -1))
-    encoder.classes_ = np.load(r'D:\Python\ArtyvisTechnologies\classes_restingecg.npy',allow_pickle=True)
+    encoder.classes_ = np.load(r'https://github.com/NevinSelby/Are-you-a-heart-patient/blob/main/classes_restingecg.npy',allow_pickle=True)
     restingecg = encoder.transform(np.expand_dims(restingecg, -1))
-    encoder.classes_ = np.load(r'D:\Python\ArtyvisTechnologies\classes_exerciseangina.npy',allow_pickle=True)
+    encoder.classes_ = np.load(r'https://github.com/NevinSelby/Are-you-a-heart-patient/blob/main/classes_exerciseangina.npy',allow_pickle=True)
     exerciseangina = encoder.transform(np.expand_dims(exerciseangina, -1))
-    encoder.classes_ = np.load(r'D:\Python\ArtyvisTechnologies\classes_stslope.npy',allow_pickle=True)
+    encoder.classes_ = np.load(r'https://github.com/NevinSelby/Are-you-a-heart-patient/blob/main/classes_stslope.npy',allow_pickle=True)
     stslope = encoder.transform(np.expand_dims(stslope, -1))
     inputs = rs.transform(np.expand_dims(
         ([int(age), int(sex), int(chestpain), restingbp, cholestrol, int(fastingbs), int(restingecg), maxhr, int(exerciseangina), int(oldpeak), int(stslope)]), 0))
